@@ -1,0 +1,3 @@
+[vmware]
+10.20.14.67  ansible_user=root   ansible_password=Redhat123!
+
