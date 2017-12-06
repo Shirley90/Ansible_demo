@@ -29,7 +29,7 @@
       folder: RedHatDemo/
       disk:
       - size_gb: "{{ disk }}"
-        type: "{{ disktype }}"
+#        type: "{{ disktype }}"
         datastore: "{{ datastore }}"
       hardware:
         memory_mb: "{{ memory }}"
@@ -43,6 +43,8 @@
         gateway: "{{ gateway }}"
         dns_servers: "{{ dns }}"
         device_type: "{{ devicetype }}"
+      customization:
+        hostname: "{{ hostname }}"
       wait_for_ip_address: no
     delegate_to: localhost
     register: deploy
