@@ -44,8 +44,6 @@
         gateway: "{{ gateway }}"
         dns_servers: "{{ dns }}"
         device_type: "{{ devicetype }}"
-      customization:
-        hostname: "{{ hostname }}"
-      wait_for_ip_address: yes
+      wait_for_ip_address: no
     delegate_to: localhost
-    registry: deploy
+    register: deploy
