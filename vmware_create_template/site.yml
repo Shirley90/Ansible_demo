@@ -45,6 +45,8 @@
         device_type: "{{ devicetype }}"
       customization:
         hostname: "{{ hostname }}"
+# note: for hostname, do not insert domain. This will be added in the domain below.
+        domain: "{{ my_domain }}"
       wait_for_ip_address: no
     delegate_to: localhost
     register: deploy
