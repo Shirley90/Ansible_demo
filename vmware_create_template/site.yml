@@ -20,7 +20,6 @@
       hostname: "{{ vcenter }}"
       username: "{{ user }}"
       password: "{{ pass }}"
- #     esxi_hostname: "{{ esxi_hostname }}"
       datacenter: "{{ datacenter }}"
       cluster: "{{ cluster }}"
       name: "{{ vmname }}"
