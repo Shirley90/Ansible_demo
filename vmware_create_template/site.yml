@@ -27,7 +27,7 @@
       state: poweredon
       template: "{{ template }}"
  #     guest_id: "{{ guestid }}"
-      folder: Template/
+      folder: RedHatDemo/
       disk:
       - size_gb: "{{ disk }}"
         type: "{{ disktype }}"
