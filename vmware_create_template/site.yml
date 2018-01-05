@@ -93,6 +93,12 @@
     - name: "vlan"
       prompt: "VLAN ID"
       default: "DS_Poc_DMZ_VLAN565"
+    - name: "hostname"
+      prompt: "Hostname"
+      default: "shirley"
+    - name: "my_domain"
+      prompt: "Domain Name"
+      default: "sunway.com.my"
 
 
   tasks:
