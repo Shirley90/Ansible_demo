@@ -99,6 +99,9 @@
     - name: "my_domain"
       prompt: "Domain Name"
       default: "sunway.com.my"
+    - name: "cluster"
+      prompt: "Cluster"
+      default: "CX2-Cloud-01"
 
 
   tasks:
