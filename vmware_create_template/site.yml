@@ -4,6 +4,8 @@
 # On the Ansible server, pre-requisite 
 #  yum install python-pyvmomi
 
+# yum install https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
+
 # To run playboook without host_key_checking, the command is as follows:
 # ansible-playbook -i hosts -e 'host_key_checking=false' test.yml
 
