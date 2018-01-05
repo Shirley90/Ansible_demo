@@ -14,6 +14,85 @@
   hosts: all
   connection: local
   gather_facts: False
+  vars_prompt:
+    - name: "vcenter"
+      prompt: "vCenter hostname?"
+      default: "172.16.22.5"
+      private: no
+    - name: "user"
+      prompt: "Enter vsphere username"
+      default: "administrator@vsphere.local"
+      private: no
+    - name: "pass"
+      prompt: "Enter vsphere password"
+      private: yes
+    - name: "esxi_hostname"
+      prompt: "ESXi Hostname where the VM will run"
+      default: "172.16.21.6"
+      private: no
+    - name: "datacenter"
+      prompt: "Datacenter"
+      default: "CX2"
+      private: no
+    - name: "datastore"
+      prompt: "Datastore?"
+      default: "HP_MSA2040_01_VM_Datastore_01"
+      private: no
+    - name: "vmname"
+      prompt: "VM Name"
+      default: "testvm"
+      private: no
+#    - name: "folder"
+#      prompt: "Folder to store your VM"
+#      default: "/Datacenter/datastore1/testvms/"
+#      private: no
+    - name: "template"
+      prompt: "Template"
+      default: "CentOS 7"
+      private: no
+    - name: "guestid"
+      prompt: "Guest ID"
+      default: "centos64Guest"
+      private: no
+    - name: "disk"
+      prompt: "Disk Capacity GB"
+      default: "20"
+      private: no
+    - name: "disktype"
+      prompt: "Disk Type"
+      default: "thin"
+      private: no
+    - name: "memory"
+      prompt: "Memory Size (MB)"
+      default: "1024"
+      private: no
+    - name: "cpu"
+      prompt: "Number of CPU"
+      default: "1"
+      private: no
+    - name: "vmip"
+      prompt: "VM IP Address"
+      default: "172.16.36.7"
+      private: no      
+    - name: "netmask"
+      prompt: "Netmask"
+      default: 255.255.255.0
+      private: no
+    - name: "gateway"
+      prompt: "Gateway"
+      default: "172.16.36.1"
+      private: no
+    - name: "dns"
+      prompt: "DNS"
+      default: "8.8.8.8"
+      private: no
+    - name: "devicetype"
+      prompt: "Device Type"
+      default: "vmxnet3"
+      private: no
+    - name: "vlan"
+      prompt: "VLAN ID"
+      default: "DS_Poc_DMZ_VLAN565"
 
 
   tasks:
@@ -29,7 +108,7 @@
       state: poweredon
       template: "{{ template }}"
  #     guest_id: "{{ guestid }}"
-      folder: RedHatDemo/
+      folder: Template/
       disk:
       - size_gb: "{{ disk }}"
 #        type: "{{ disktype }}"
@@ -46,6 +125,7 @@
         gateway: "{{ gateway }}"
         dns_servers: "{{ dns }}"
         device_type: "{{ devicetype }}"
+        vlan: "{{ vlan }}"
       customization:
         hostname: "{{ hostname }}"
 # note: for hostname, do not insert domain. This will be added in the domain below.
